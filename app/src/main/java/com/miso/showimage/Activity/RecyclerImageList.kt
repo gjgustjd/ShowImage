@@ -22,6 +22,10 @@ class RecyclerImageList(private val imageData: List<ImageDto>) :
         return imageData.size
     }
 
+    override fun getItemViewType(position: Int): Int {
+        return position
+    }
+
     inner class Holder(val binding: ItemImageBinding) : RecyclerView.ViewHolder(binding.root) {
         fun bind(imageDto: ImageDto) {
             binding.imageDto = imageDto
