@@ -21,6 +21,7 @@ class MainActivity : AppCompatActivity() {
     lateinit var edt_search: EditText
     lateinit var recycler_Images: RecyclerView
     lateinit var imageData: List<ImageDto>
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main)

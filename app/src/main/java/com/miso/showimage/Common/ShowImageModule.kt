@@ -1,4 +1,4 @@
-package com.miso.showimage
+package com.miso.showimage.Common
 
 import androidx.lifecycle.MutableLiveData
 import com.miso.showimage.model.ImageDto
