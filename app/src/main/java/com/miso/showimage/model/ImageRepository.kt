@@ -18,10 +18,9 @@ import javax.inject.Singleton
 @Singleton
 class ImageRepository @Inject constructor() {
     suspend fun getImageList(
-        page: Int = 2,
-        limit: Int = 100
-    ):List<ImageDto>
-    {
+        page: Int = 0,
+        limit: Int = 10
+    ): List<ImageDto> {
         var gson = GsonBuilder().setLenient().create()
 
         val retrofit = Retrofit.Builder()
