@@ -11,7 +11,7 @@ android {
 
     defaultConfig {
         applicationId "com.miso.showimage"
-        minSdkVersion 16
+        minSdkVersion 21
         targetSdkVersion 31
         versionCode 1
         versionName "1.0"
@@ -87,4 +87,7 @@ dependencies {
 
     // optional - Jetpack Compose integration
     implementation "androidx.paging:paging-compose:1.0.0-alpha14"
+
+    //coroutines
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.3.9'
 }
