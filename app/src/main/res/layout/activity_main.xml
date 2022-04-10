@@ -15,6 +15,7 @@
             android:ems="10"
             android:hint="작가 검색"
             android:inputType="textPersonName"
+            android:visibility="gone"
             app:layout_constraintEnd_toEndOf="@+id/recycler_Imgs"
             app:layout_constraintStart_toStartOf="@+id/recycler_Imgs"
             app:layout_constraintTop_toTopOf="parent" />
