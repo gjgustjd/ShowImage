@@ -7,6 +7,7 @@ import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import com.miso.showimage.R
 import com.miso.showimage.databinding.ActivityMainBinding
 import com.miso.showimage.model.ImageDto
@@ -49,7 +50,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun setupRecycler() {
-        recycler_Images.layoutManager = LinearLayoutManager(this)
+        recycler_Images.layoutManager = StaggeredGridLayoutManager(2,RecyclerView.VERTICAL)
         recycler_Images.adapter = PagingImageListAdapter()
     }
 }
