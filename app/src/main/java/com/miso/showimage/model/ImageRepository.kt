@@ -19,7 +19,7 @@ import javax.inject.Singleton
 class ImageRepository @Inject constructor() {
     suspend fun getImageList(
         page: Int = 0,
-        limit: Int = 10
+        limit: Int = 100
     ): List<ImageDto> {
         var gson = GsonBuilder().setLenient().create()
 
@@ -33,7 +33,7 @@ class ImageRepository @Inject constructor() {
 
     fun getPagingData(): Flow<PagingData<ImageDto>> {
         return Pager(
-            PagingConfig(pageSize = 10)
+            PagingConfig(pageSize = 100)
         ) { ShowImagePagingSource(this) }.flow
     }
 

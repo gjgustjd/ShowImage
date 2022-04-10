@@ -51,6 +51,6 @@ class MainActivity : AppCompatActivity() {
 
     fun setupRecycler() {
         recycler_Images.layoutManager = StaggeredGridLayoutManager(2,RecyclerView.VERTICAL)
-        recycler_Images.adapter = PagingImageListAdapter()
+        recycler_Images.adapter = PagingImageListAdapter(this)
     }
 }
