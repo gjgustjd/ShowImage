@@ -21,7 +21,6 @@ object GeneralBindingAdapters {
     @BindingAdapter("app:imageUrl")
     @JvmStatic
     fun loadImage(imageView: ImageView, url: String) {
-        if(imageView.isInvisible) {
             Glide.with(imageView.context)
                 .asBitmap()
                 .load(url)
@@ -45,11 +44,9 @@ object GeneralBindingAdapters {
                         isFirstResource: Boolean
                     ): Boolean {
                         imageView.setImageBitmap(resource)
-                        imageView.visibility = View.VISIBLE
                         return false
                     }
                 })
                 .into(imageView)
-        }
     }
 }

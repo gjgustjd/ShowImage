@@ -35,7 +35,6 @@
                 android:layout_height="wrap_content"
                 android:adjustViewBounds="true"
                 android:scaleType="fitXY"
-                android:visibility="invisible"
                 app:imageUrl="@{ImageDto.download_url}"
                 tools:srcCompat="@tools:sample/avatars"
                 tools:visibility="visible" />
