@@ -12,12 +12,11 @@ import javax.inject.Singleton
 
 @Singleton
 class ImageRepository @Inject constructor() {
-    fun getImageList(
+    suspend fun getImageList(
         page: Int = 2,
-        limit: Int = 100,
-        onResponse: (Call<List<ImageDto>>, Response<List<ImageDto>>) -> Unit,
-        onFailure: (Call<List<ImageDto>>, Throwable) -> Unit
-    ) {
+        limit: Int = 100
+    ):List<ImageDto>
+    {
         var gson = GsonBuilder().setLenient().create()
 
         val retrofit = Retrofit.Builder()
@@ -25,20 +24,6 @@ class ImageRepository @Inject constructor() {
             .addConverterFactory(GsonConverterFactory.create(gson))
             .build()
         val api = retrofit.create(ImageAPI::class.java)
-        api.getImage(page, limit).enqueue(object : Callback<List<ImageDto>> {
-            override fun onResponse(
-                call: Call<List<ImageDto>>,
-                response: Response<List<ImageDto>>
-            ) {
-                Log.i("getImageList", "onResponse")
-                onResponse(call, response)
-            }
-
-            override fun onFailure(call: Call<List<ImageDto>>, t: Throwable) {
-                Log.i("getImageList", "onFailure")
-                onFailure(call, t)
-            }
-        }
-        )
+        return api.getImage(page, limit)
     }
 }

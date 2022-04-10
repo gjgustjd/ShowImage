@@ -7,5 +7,5 @@ import retrofit2.http.Query
 
 interface ImageAPI {
     @GET("v2/list")
-    fun getImage(@Query("page") page: Int = 2, @Query("limit") limit: Int = 100): Call<List<ImageDto>>
+    suspend fun getImage(@Query("page") page: Int = 2, @Query("limit") limit: Int = 100): List<ImageDto>
 }
